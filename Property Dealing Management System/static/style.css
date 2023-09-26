@@ -1,0 +1,26 @@
+body{
+text-align:center;
+background-image:url('abc.jpg');
+background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid black;
+}
+td {
+  text-align: center;
+  height: 20px;
+  vertical-align: bottom;
+  border:3px solid black;
+}
+th{
+text-align: center;
+border:3px solid black;
+}
+tr{
+border:3px solid black;
+}

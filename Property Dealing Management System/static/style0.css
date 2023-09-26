@@ -1,0 +1,7 @@
+body{
+text-align:center;
+background-image:url('abc.jpg');
+ background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;
+}

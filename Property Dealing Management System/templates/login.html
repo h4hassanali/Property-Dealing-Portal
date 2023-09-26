@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'hassan.css' %}">
+</head>
+<body>
+<div class="bg-image"> </div>
+<h1 style="color:white;">DREAMHOME LOGIN PAGE</h1>
+<form method="post" action="login">
+    {% csrf_token %}
+    <h2 style="margin-top:100px;color:white">Username : </h2>
+    <input type="text" name="username" placeholder="Enter username here..." size="30" style="height:30px">
+    <br>
+    <h2 style="color:white;" >Password : </h2>
+    <input type="password" name="password" placeholder="Enter password here..." size="30" style="height:30px">
+    <br>
+    <br>
+    <input type="submit" value="Login" style="height:30px; width:200px">
+
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SEARCH PROPERTY</title>
+    <link rel="stylesheet" href="{% static 'hassan.css' %}">
+</head>
+<body>
+<h1>DREAM HOME PROPERTY DEALERS</h1>
+<h2 style="color:white;">DELETE A PROPERTY</h2>
+<form method="post" action="del_confirm">
+    {% csrf_token %}
+    {%if user.is_authenticated %}
+    <h2 style="color:white;">Please provide property number you want to delete : </h2>
+    <input type="text" name="pr_no" size="30" style="height:30px">
+    <input type="submit" value="Delete" style="height:30px; width:100px">
+    <h3 style="color:white">THIS PROJECT IS DESIGNED BY HASSAN ALI<br> 302-2017 <br> BSSE 5th A</h3>
+    <a href="logout"> <input type="button" value="Logout...." style="height:30px; width:100px"></a>
+    {%else%}
+     <h1>Please Login First .....</h1>
+    <a href="login"><input type="button" value="login"></a>
+{% endif %}
+</form>
+</body>
+</html>

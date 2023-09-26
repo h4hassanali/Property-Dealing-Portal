@@ -1,0 +1,36 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sales</title>
+    <link rel="stylesheet" href="{% static 'hassan.css' %}">
+</head>
+<body>
+<h1>Dream Home Property Dealing </h1>
+<h1>ADMIN PAGE</h1>
+<h1>Home Page</h1>
+{% if user.is_authenticated %}
+<form method="post" action="home_add">
+    {% csrf_token %}
+    <h1></h1>
+    <input type="submit" name="add" value="ADD NEW PROPERTY" style="height:30px; width:200px">
+</form>
+<form method="post" action="home_search">
+    {% csrf_token %}
+    <br>
+    <input type="submit" name="search" value="SEARCH FOR PROPERTY" style="height:30px; width:200px">
+</form>
+<form method="post" action="home_delete">
+    {% csrf_token %}
+    <br>
+    <input type="submit" name="delete" value="DELETE A PROPERTY" style="height:30px; width:200px">
+</form>
+<br><br><br>
+<a href="logout"><input type="button" value="logout" style="height:30px; width:200px"></a>
+{% else %}
+<h2>Please Login First ... </h2>
+<a href="/login"> <input type="button" value="login" style="height:30px; width:200px;"></a>
+{% endif %}
+</body>
+</html>

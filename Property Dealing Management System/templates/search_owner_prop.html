@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Owner's Properties</title>
+    <link rel="stylesheet" href="{% static 'style3.css'%}">
+</head>
+<body>
+{% if user.is_authenticated %}
+<h1>Welcome to User Portal.</h1>
+<h2> You can search properties of an owner here:</h2>
+<h2>Please Enter Owner Number</h2>
+<form method="post" action="search_owner_prop">
+    {% csrf_token %}
+    <input type="text" name="owner_num">
+    <br>
+    <br>
+    <input type="submit" value="Search">
+    <br>
+    <br>
+    <br>
+    <a href="logout">
+    <input type="button" value="Logout"></a>
+</form>
+{% else %}
+<h2>You are not allowed to access this page.<br> Please Login first ... </h2>
+<a href="/login"> <input type="submit" value="Login"></a>
+{% endif %}
+</body>
+</html>

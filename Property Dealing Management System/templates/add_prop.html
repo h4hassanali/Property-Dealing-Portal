@@ -1,0 +1,41 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sales</title>
+    <link rel="stylesheet" href="{% static 'hassan.css' %}">
+</head>
+<body>
+<h1>Dream Home Property Dealing </h1>
+<form method="post" action="add_new">
+    {% csrf_token %}
+    {% if user.is_authenticated %}
+    <h2 style="coloe:black;">Property for Rent <br> Add New Property </h2>
+    <h3>Enter Property Number :</h3>
+    <input type="text" name="p_no" size="30" style="height:30px">
+    <h3>Enter Street : </h3>
+    <input type="text" name="street" size="30" style="height:30px">
+    <h3>Enter City Name :</h3>
+    <input type="text" name="city" size="30" style="height:30px">
+    <h3>Enter postcode :</h3>
+    <input type="text" name="postcode" size="30" style="height:30px">
+    <h3>Enter type :</h3>
+    <input type="text" name="type" size="30" style="height:30px">
+    <h3>Enter no of rooms :</h3>
+    <input type="text" name="rooms" size="30" style="height:30px">
+    <h3>Enter rent :</h3>
+    <input type="text" name="rent" size="30" style="height:30px">
+    <h3>Enter owner number :</h3>
+    <input type="text" name="o_num" size="30" style="height:30px">
+    <br>
+    <input type="submit" value="ADD PROPERTY" style="height:30px; width:200px">
+    <br><br>
+    <a href="logout"> <input type="button" value="Logout...." style="height:30px; width:200px"></a>
+    </form>
+    {% else %}
+    <h1>Please Login First .....</h1>
+    <a href="login"><input type="button" value="login" style="height:30px; width:200px"></a>
+{% endif %}
+</body>
+</html>
